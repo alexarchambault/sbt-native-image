@@ -25,7 +25,7 @@ jobs:
           export GRAALVM_HOME=$($JABBA which --home graalvm@20.1.0)
           $GRAALVM_HOME/bin/gu install native-image
           export NATIVE_IMAGE_COMMAND=$GRAALVM_HOME/bin/native-image
-          sbt test plugin/scripted
+          csbt test plugin/scripted
   windows:
     runs-on: ${{ matrix.os }}
     strategy:
@@ -40,4 +40,4 @@ jobs:
       - shell: cmd
         run: |
           call "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvars64.bat"
-          sbt test
+          csbt test
